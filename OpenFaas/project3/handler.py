@@ -1,7 +1,7 @@
 import json
-import boto3
-import os
+from awss3 import S3Client
 
 def handle(req):
-    # TODO: Implement the handler logic
-    return "Function executed successfully"
+    s3 = S3Client()
+    # TODO: Complete the function logic
+    return "Function executed with final updates"
