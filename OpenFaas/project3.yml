@@ -1,0 +1,19 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://<OPENFAAS_GATEWAY_URL>
+functions:
+  project3:
+    lang: python3
+    handler: ./project3
+    image: irubashk/project3:latest
+    labels:
+      com.openfaas.scale.max: 5
+      com.openfaas.scale.min: 1
+    environment:
+      AWS_ACCESS_KEY_ID: "<AWS_ACCESS_KEY_ID>"
+      AWS_SECRET_ACCESS_KEY: "<AWS_SECRET_ACCESS_KEY>"
+      S3_AWS_ACCESS_KEY_ID: "<S3_AWS_ACCESS_KEY_ID>"
+      S3_AWS_SECRET_ACCESS_KEY: "<S3_AWS_SECRET_ACCESS_KEY>"
+      S3_HOST: "<S3_HOST>"
+      S3_PORT: "<S3_PORT>"
