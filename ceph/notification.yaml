@@ -1,0 +1,8 @@
+apiVersion: ceph.rook.io/v1
+kind: CephBucketNotification
+metadata:
+  name: video-upload-notification
+spec:
+  topic: my-topic
+  events:
+    - s3:ObjectCreated:*
